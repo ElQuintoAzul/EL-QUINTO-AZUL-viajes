@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>El Quinto Azul — Viajes del club</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Courier+Prime:wght@400;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/marca.css">
+<style>
+  .viajes-lista{display:grid;gap:16px;margin-top:8px;}
+  .viaje-item{display:flex;flex-wrap:wrap;align-items:center;gap:14px;border:1px solid var(--tinta);background:var(--papel2);padding:18px 20px;text-decoration:none;color:inherit;transition:transform .15s, box-shadow .15s;}
+  .viaje-item:hover{transform:translateY(-2px);box-shadow:var(--sombra);}
+  .viaje-fecha{font-family:'Courier Prime',monospace;font-size:12px;letter-spacing:.06em;color:var(--azul);min-width:120px;}
+  .viaje-nombre{font-family:'Playfair Display',serif;font-weight:700;font-size:20px;flex:1 1 220px;}
+  .viaje-meta{font-size:13px;color:var(--tinta2);flex:1 1 100%;}
+  .viaje-item.proximo .viaje-fecha{color:var(--coral);}
+  .aviso{border:1px dashed var(--linea);background:var(--papel2);padding:16px 18px;font-size:13.5px;color:var(--tinta2);margin-top:26px;}
+</style>
+<script>
+(function(){try{var t=localStorage.getItem('eqa-theme');
+if(!t){t=window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}
+document.documentElement.setAttribute('data-theme',t);}catch(e){}})();
+</script>
+</head>
+<body>
+
+<nav class="topnav"><div class="topnav-inner"><div class="nav-scroll"><span class="tn-brand">El Quinto Azul</span><a href="#viajes">Viajes</a></div><span class="nav-fade"></span><button class="theme-toggle" id="themeToggle" type="button" aria-label="Cambiar modo claro/oscuro" title="Modo claro / oscuro"><svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg><svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.5M12 19.5V22M4.2 4.2l1.8 1.8M18 18l1.8 1.8M2 12h2.5M19.5 12H22M4.2 19.8L6 18M18 6l1.8-1.8"/></svg></button></div></nav>
+
+<header>
+  <div class="logo-sello"><img src="assets/logo.jpeg" alt="El Quinto Azul"></div>
+  <div class="eyebrow-mono">Especialistas en viajes de buceo</div>
+  <h1>Bitácoras del club</h1>
+  <div class="fecha-bitacora">TODOS LOS VIAJES, EN UN SITIO</div>
+</header>
+
+<div class="wrap">
+  <section id="viajes">
+    <div class="section-head"><h2>Viajes</h2></div>
+    <p class="section-sub">Cada viaje tiene su propia bitácora con itinerario, precio, fauna y toda la info práctica. Se abre en el móvil sin instalar nada.</p>
+
+    <div class="viajes-lista">
+      <a class="viaje-item" href="viajes/2026-08-palamos/">
+        <span class="viaje-fecha">26–27 AGO 2026</span>
+        <span class="viaje-nombre">Palamós</span>
+        <span class="viaje-meta">Costa Brava · Palamós Dive Center · 4 inmersiones en dos días.</span>
+      </a>
+    </div>
+
+    <div class="aviso">Para añadir un viaje: copia <span class="mono">plantilla/plantilla_viaje.html</span> a <span class="mono">viajes/AAAA-MM-destino/index.html</span>, edítalo y añade aquí una línea nueva apuntando a esa carpeta.</div>
+  </section>
+</div>
+
+<footer>EL QUINTO AZUL · ESPECIALISTAS EN VIAJES DE BUCEO · NOS VEMOS BAJO EL AGUA</footer>
+
+<script src="assets/marca.js"></script>
+</body>
+</html>
